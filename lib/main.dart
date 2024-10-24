@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_arq_tasks/screens/components/task.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,41 +12,25 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Arq Tasks',
+      title: 'Arquitetura Cross-Platform',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Tasks Arquitetura'),
+          title: const Text('Arquitetura Cross-Platform'),
         ),
-        body: Container(
-            child: Stack(
+        body: const Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Container(
-              color: Colors.blue,
-              height: 140,
-            ),
-            Container(
-              color: Colors.white,
-              height: 100,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    width: 72,
-                    height: 100,
-                    color: Colors.black26,
-                  ),
-                  Text('Clean Architecture'),
-                  ElevatedButton(
-                      onPressed: () {}, child: Icon(Icons.arrow_forward)),
-                ],
-              ),
-            )
+            Task(title: 'Arquitetura Hexagonal'),
+            Task(title: 'Domain Driven Design'),
+            Task(title: 'Clean Architecture'),
+            Task(title: 'Provider'),
+            Task(title: 'MobX'),
           ],
-        )),
+        ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
           child: const Icon(Icons.add),
